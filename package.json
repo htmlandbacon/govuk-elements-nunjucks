@@ -1,0 +1,40 @@
+{
+  "name": "govuk-elements-nunjucks",
+  "version": "0.1.0",
+  "description": "GOV.UK elements as nunjucks",
+  "scripts": {
+    "test": "xo && mocha macros/**/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htmlandbacon/govuk-elements-nunjucks.git"
+  },
+  "keywords": [
+    "nunjucks",
+    "gov.uk",
+    "elements"
+  ],
+  "author": "Colin Oakley <colinoakley.digitaldwp@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/htmlandbacon/govuk-elements-nunjucks/issues"
+  },
+  "homepage": "https://github.com/htmlandbacon/govuk-elements-nunjucks#readme",
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "env": [
+      "node",
+      "mocha"
+    ],
+    "rules": {
+      "max-lines": 0
+    }
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "mocha": "^3.2.0",
+    "nunjucks": "^3.0.0"
+  }
+}
