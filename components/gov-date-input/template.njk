@@ -1,0 +1,18 @@
+{% if not id %}
+    {% set id="input-" + name %}
+{% endif %}
+
+<div id="{{id}}-form" class="form-group{% if error %} error{% endif %}">
+    <label class="form-label-bold" for="{{ id }}">
+        <span class="form-label">{{ label }}</span>
+        {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}
+        {% if error %}<span class="error-message">{{error}}</span> {% endif %}
+    </label>
+            <input
+                class="form-control"
+                id="{{ id }}"
+                {% if maxlength %} maxlength="{{maxlength}}"{% endif %}
+                name="{{name}}"
+                type="text"
+                value="{{value}}" />
+</div>
