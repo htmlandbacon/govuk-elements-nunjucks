@@ -38,7 +38,7 @@ describe('gov-input', () => {
       hint
     });
     const $ = cheerio.load(output);
-    const formHintText = $('label .form-label + span.form-hint').html();
+    const formHintText = $('label span.form-hint').html();
 
     expect(formHintText).to.equal(hint);
   });
@@ -79,10 +79,38 @@ describe('gov-input', () => {
     });
     const $ = cheerio.load(output);
     const formGroupClasses = $('.form-group').attr('class');
-    const errorMsg = $('label .form-label + span.error-message').text();
+    const errorMsg = $('label span.error-message').text();
 
     expect(formGroupClasses).to.equal('form-group error');
     expect(errorMsg).to.equal(error);
+  });
+  describe('class options', () => {
+    it('should add classes to input/label when supplied', () => {
+      const classes = {label: 'test-label-class', input: 'test-input-class'};
+      const output = nunjucks.render('./components/gov-input/template.njk', {
+        label: 'Full name',
+        classes
+      });
+      const $ = cheerio.load(output);
+      const labelClasses = $('.form-group label span').attr('class');
+      const inputClasses = $('.form-group input').attr('class');
+
+      expect(labelClasses).to.equal('test-label-class');
+      expect(inputClasses).to.equal('form-control test-input-class');
+    });
+    it('should default to class form-label-bold when label class is not supplied', () => {
+      const classes = {input: 'test-input-class'};
+      const output = nunjucks.render('./components/gov-input/template.njk', {
+        label: 'Full name',
+        classes
+      });
+      const $ = cheerio.load(output);
+      const labelClasses = $('.form-group label span').attr('class');
+      const inputClasses = $('.form-group input').attr('class');
+
+      expect(labelClasses).to.equal('form-label-bold');
+      expect(inputClasses).to.equal('form-control test-input-class');
+    });
   });
 });
 
