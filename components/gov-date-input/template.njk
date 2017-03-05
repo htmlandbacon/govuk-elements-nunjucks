@@ -1,0 +1,54 @@
+{% if not id %}
+    {% set id="input-" + name %}
+{% endif %}
+
+<div id="{{id}}-form" class="form-group{% if error %} error{% endif %}">
+    <fieldset>
+        <div class="form-date">
+            <legend>
+                <span class="form-label-bold">{{ legend }}</span>
+                {% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+                {% if error %}<span class="error-message">{{ error }}</span>{% endif %}
+            </legend>
+            
+            <div class="form-group form-group-day">
+                <label for="{{id}}-day">Day</label>
+                <input class="form-control"
+                        id="{{id}}-day"
+                        name="{{name}}Day"
+                        value="{{value.day}}"
+                        type="number"
+                        pattern="[0-9]*"
+                        min="0"
+                        max="31"
+                        maxlength="2" />
+            </div>
+            
+            <div class="form-group form-group-month">
+                <label for="{{id}}-month">Month</label>
+                <input class="form-control"
+                        id="{{id}}-month"
+                        name="{{name}}Month"
+                        value="{{value.month}}"
+                        type="number"
+                        pattern="[0-9]*"
+                        min="0"
+                        max="31"
+                        maxlength="2" />
+            </div>
+
+            <div class="form-group form-group-year">
+                <label for="{{id}}-year">Year</label>
+                <input class="form-control"
+                        id="{{id}}-year"
+                        name="{{name}}Year"
+                        value="{{value.year}}"
+                        type="number"
+                        pattern="[0-9]*"
+                        min="0"
+                        {% if maxYear %}max="{{maxYear}}"{% endif %}
+                        maxlength="4" />
+            </div>
+        </div>
+    </fieldset>
+</div>
