@@ -1,0 +1,20 @@
+{% if not id %}
+    {% set id="textarea-" + name %}
+{% endif %}
+{% if not rows %}
+    {% set rows=8 %}
+{% endif %}
+
+<div id="{{id}}-form" class="form-group{% if error %} error{% endif %}">
+    <label for="{{ id }}">
+        <span class="{% if classes.label %}{{ classes.label }}{% else %}form-label-bold{% endif %}">{{ label }}</span>
+        {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}
+        {% if error %}<span class="error-message">{{error}}</span> {% endif %}
+    </label>
+    <textarea
+        class="form-control{% if classes.input %} {{ classes.input }}{% endif %}"
+        id="{{ id }}"
+        rows="{{ rows }}"
+        {% if maxlength %} maxlength="{{maxlength}}"{% endif %}
+        name="{{name}}">{{value}}</textarea>
+</div>
