@@ -28,11 +28,11 @@ classes
 | maxlength     | sets the max length of the input                              |
 | classes       | object used for styling elements                              |
 
-With hint, error and maxlength, if the values are empty, then they are not displayed in the render.
+With hint, error and maxlength if the values are empty, then they are not displayed in the render.
 
 ## Classes
 
-You to add various styles to the elements within the macro.
+You can add various styles to the elements within the macro.
 
 | Name          | Description                                                   |
 | ------------- |---------------------------------------------------------------|
@@ -60,7 +60,7 @@ const nunjucksAppEnv = nunjucks.configure(appViews, {
 ```
 
 ## Example in use
-Include the nunjucks macro and render it like so
+Include the nunjucks macro and render it like so:
 
 ```
 {% from 'gov-input/macro.njk' import govInput %}
