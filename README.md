@@ -26,7 +26,6 @@ Things to add/improve
 
 - gov-select
 - gov-error-summary
-
 - clean up testing
 - common approach to data-attributes
 - documentation
@@ -54,10 +53,17 @@ This will need to be exposed in the nunjuck render and can be called like this:
 {{ govInput(name='input', label='This is a label') }}
 ```
 
+## Documentation
+
+- [gov-input](./components/gov-input/README.md)
+
+## Contributing
+
+Notice something wrong? Or a feature that is missing? Feel free to open an [issue](https://github.com/htmlandbacon/govuk-elements-nunjucks), or fork and do a pull request.
 
 ## Links
 
 - [nunjucks](https://mozilla.github.io/nunjucks/)
-- [nunjucks-helpers](https://github.com/htmlandbacon/nunjucks-helpers)
+- [GOVUK elements nunjucks](https://github.com/htmlandbacon/govuk-elements-nunjucks)
 - [GOVUK elements](https://github.com/alphagov/govuk_elements)
 - [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
