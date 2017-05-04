@@ -16,18 +16,20 @@ Components with defined schemas.
 
 Current components:
 
+- gov-checkboxes
 - gov-date-input
 - gov-input
 - gov-radio
-- gov-select
 - gov-textarea
 
 Things to add/improve
 
-- gov-checkboxes
+- gov-select
 - gov-error-summary
+
 - clean up testing
 - common approach to data-attributes
+- documentation
 - update radios to be new style
 
 ## Examples
