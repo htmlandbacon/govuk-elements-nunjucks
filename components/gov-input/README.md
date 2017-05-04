@@ -43,7 +43,7 @@ These are supplied as a string i.e `{label: 'form-label', input: 'new-class new-
 
 ## Using with express
 
-Using with express you will need to expose the views to the nunjucks config, an example is below.
+You will need to expose the views to the nunjucks config, an example is below.
 
 ```javascript
 
@@ -71,5 +71,6 @@ Include the nunjucks macro and render it like so:
 ## Links
 
 - [nunjucks](https://mozilla.github.io/nunjucks/)
+- [nunjucks with node](https://mozilla.github.io/nunjucks/getting-started.html)
 - [GOVUK elements](https://github.com/alphagov/govuk_elements)
 - [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
