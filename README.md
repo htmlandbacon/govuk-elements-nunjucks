@@ -59,7 +59,9 @@ This will need to be exposed in the nunjuck render and can be called like this:
 
 ## Contributing
 
-Notice something wrong? Or a feature that is missing? Feel free to open an [issue](https://github.com/htmlandbacon/govuk-elements-nunjucks), or fork and do a pull request.
+Notice something wrong? Or a feature that is missing?
+
+Feel free to open an [issue](https://github.com/htmlandbacon/govuk-elements-nunjucks), or fork and do a pull request.
 
 ## Links
 
