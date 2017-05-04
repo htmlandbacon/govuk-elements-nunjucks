@@ -4,6 +4,7 @@ This macro generates an `<input>` and `<label>`.
 
 ## Variables
 
+```
 name
 id
 label
@@ -12,6 +13,7 @@ value
 error
 maxlength
 classes
+```
 
 ## Descriptions of variables
 
