@@ -1,44 +1,36 @@
-# GOV-DATE-INPUT Documentation
+# GOV-TEXTAREA Documentation
 
-This macro generates an a day month and year `<input>` with `<label>`, and a `<legend>` all in a `<fieldset>`.
+This macro generates an `<textarea>` and `<label>`.
 
 ## Variables
 
 ```
 name
 id
-legend
+label
 hint
 value
-maxYear
 error
-
+rows
+maxlength
 ```
 
 ## Descriptions of variables
 
-Both name and id are used as a pre-fix for generating each input name and id.
-
-Providing the name as 'dob' will generate inputs with labels in the following format:
-
-```
-dob-day
-dob-month
-dob-year
-```
-
-
 | Name          | Description                                                   |
 | ------------- |---------------------------------------------------------------|
-| name          | sets the base of name of the input                            |
+| name          | sets the name of the input                                    |
 | id            | sets the id of the input, and the for of the label            |
-| legend        | sets the legend of the overall fiel                           |
-| hint          | sets hint text within the legend                              |
-| value         | object of {day, month, year}                                  |
-| maxYear       | sets the max year, min is defaulted to 0                      |
-| error         | sets the error message  in the legend                         |
+| label         | sets the text of the label                                    |
+| hint          | sets hint text within the label                               |
+| value         | sets the value of the input                                   |
+| error         | sets the error message                                        |
+| rows          | sets the rows of the textarea                                 |
+| maxlength     | sets the max length of the textarea                           |
 
 With hint, error and maxlength if the values are empty, then they are not displayed in the render.
+
+Rows will default to 8.
 
 ## Using with express
 
@@ -62,9 +54,9 @@ const nunjucksAppEnv = nunjucks.configure(appViews, {
 Include the nunjucks macro and render it like so:
 
 ```
-{% from 'gov-date-input/macro.njk' import govDate %}
+{% from 'gov-textarea/macro.njk' import govTextArea %}
 
-{{ govDate('dob', 'dob', 'Date of birth', '', {day: 01, month: 02, year: 2010}) }}
+{{ govTextArea('example-name', 'example-id', 'Example label') }}
 ```
 
 ## Links
