@@ -56,6 +56,7 @@ This will need to be exposed in the nunjuck render and can be called like this:
 ## Documentation
 
 - [gov-input](./components/gov-input/README.md)
+- [gov-date-input](./components/gov-date-input/README.md)
 
 ## Contributing
 
