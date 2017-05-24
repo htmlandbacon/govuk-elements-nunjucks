@@ -54,9 +54,9 @@ const nunjucksAppEnv = nunjucks.configure(appViews, {
 Include the nunjucks macro and render it like so:
 
 ```
-{% from 'gov-textarea/macro.njk' import govTextArea %}
+{% from 'gov-textarea/macro.njk' import govTextarea %}
 
-{{ govTextArea('example-name', 'example-id', 'Example label') }}
+{{ govTextarea('example-name', 'example-id', 'Example label') }}
 ```
 
 ## Links
