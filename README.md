@@ -22,10 +22,10 @@ Current components:
 - gov-radio
 - gov-textarea
 - gov-select
+- gov-error-summary
 
 Things to add/improve
 
-- gov-error-summary
 - clean up testing
 - common approach to data-attributes
 - documentation
@@ -56,10 +56,13 @@ This will need to be exposed in the nunjuck render and can be called like this:
 ## Documentation
 
 - [gov-checkboxes](./components/gov-checkboxes/README.md)
-- [gov-input](./components/gov-input/README.md)
 - [gov-date-input](./components/gov-date-input/README.md)
+- [gov-error-summary](./components/gov-error-summary/README.md)
+- [gov-input](./components/gov-input/README.md)
 - [gov-radios](./components/gov-radios/README.md)
+- [gov-select](./components/gov-select/README.md)
 - [gov-textarea](./components/gov-textarea/README.md)
+
 
 ## Contributing
 
