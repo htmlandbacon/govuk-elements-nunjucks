@@ -21,10 +21,10 @@ Current components:
 - gov-input
 - gov-radio
 - gov-textarea
+- gov-select
 
 Things to add/improve
 
-- gov-select
 - gov-error-summary
 - clean up testing
 - common approach to data-attributes

@@ -1,0 +1,19 @@
+{% if not id %}
+    {% set id="select-" + name %}
+{% endif %}
+
+<div id="{{id}}-form" class="form-group{% if classes.fromGroup %} {{classes.fromGroup}}{% endif %}{% if error %} error{% endif %}">
+    <label for="{{ id }}">
+        <span class="{% if classes.label %}{{ classes.label }}{% else %}form-label-bold{% endif %}">{{ label }}</span>
+        {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}
+        {% if error %}<span class="error-message">{{error}}</span> {% endif %}
+    </label>
+    
+    <select class="form-control{% if classes.selectClass %} {{classes.selectClass}}{% endif %}" id="{{ id }}" name="{{name}}">
+        {% if placeholder %}<option value="">{{ placeholder }}</option>{% endif %}
+        {% for option in options %}
+            <option value="{{ option.value }}"
+            {% if value == option.value %} selected{% endif %}>{{ option.display }}</option>
+        {% endfor %}
+    </select>
+</div>
