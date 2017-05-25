@@ -1,6 +1,6 @@
-# GOV-RADIOS Documentation
+# GOV-SELECT Documentation
 
-This macro generates a `<select>` with `<label>` based on what you supply..
+This macro generates a `<select>` with `<label>` based on what you supply.
 
 ## Variables
 
