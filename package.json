@@ -1,6 +1,6 @@
 {
   "name": "govuk-elements-nunjucks",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "GOV.UK elements as nunjucks",
   "scripts": {
     "test": "xo && mocha components/**/spec.js"
