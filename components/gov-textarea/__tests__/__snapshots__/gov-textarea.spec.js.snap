@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gov-textarea class options should add classes to textarea/label when supplied 1`] = `
+<div id="textarea-undefined-form" class="form-group">
+  <label for="textarea-undefined">
+    <span class="test-label-class">Full name</span>
+  </label>
+  <textarea class="form-control test-input-class" id="textarea-undefined"
+  rows="8" name=""></textarea>
+</div>
+`;
+
+exports[`gov-textarea class options should default to class form-label-bold when label class is not supplied 1`] = `
+<div id="textarea-undefined-form" class="form-group">
+  <label for="textarea-undefined">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <textarea class="form-control test-input-class" id="textarea-undefined"
+  rows="8" name=""></textarea>
+</div>
+`;
+
+exports[`gov-textarea should add a form hint using the hint attribute 1`] = `
+<div id="textarea-more-details-form" class="form-group">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+    <span class="form-hint">Do not include bank details</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="8" name="more-details"></textarea>
+</div>
+`;
+
+exports[`gov-textarea should add error message and classes when passed an error object 1`] = `
+<div id="textarea-more-details-form" class="form-group error">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+    <span class="error-message">Put something in the box</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="8" name="more-details"></textarea>
+</div>
+`;
+
+exports[`gov-textarea should add maxlength to textarea using the maxlength attribute 1`] = `
+<div id="textarea-more-details-form" class="form-group">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="8" maxlength="1200"
+  name="more-details"></textarea>
+</div>
+`;
+
+exports[`gov-textarea should add rows attribute to textarea using the rows attribute 1`] = `
+<div id="textarea-more-details-form" class="form-group">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="12" name="more-details"></textarea>
+</div>
+`;
+
+exports[`gov-textarea should set the ID as textarea-{name} if ID attr not supplied 1`] = `
+<div id="textarea-more-details-form" class="form-group">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="8" name="more-details"></textarea>
+</div>
+`;
+
+exports[`gov-textarea should set the value of the textarea using the value attribute 1`] = `
+<div id="textarea-more-details-form" class="form-group">
+  <label for="textarea-more-details">
+    <span class="form-label-bold">More details</span>
+  </label>
+  <textarea class="form-control" id="textarea-more-details" rows="8" name="more-details">I really loved this service, it was great</textarea>
+</div>
+`;
+
+exports[`gov-textarea should use ID attribute value over generated textarea-{name} ID 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">More details</span>
+  </label>
+  <textarea class="form-control" id="my-id" rows="8" name="more-details"></textarea>
+</div>
+`;

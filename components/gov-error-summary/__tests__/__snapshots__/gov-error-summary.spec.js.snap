@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`gov-error-summary render should render h1, p and correct links when data is supplied 1`] = `
+exports[`gov-error-summary should render h1, p and correct links when data is supplied 1`] = `
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading"
 tabindex="-1">
   <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Error Heading</h1>
@@ -16,9 +16,9 @@ tabindex="-1">
 </div>
 `;
 
-exports[`gov-error-summary render should render nothing when no errors are supplied 1`] = `""`;
+exports[`gov-error-summary should render nothing when no errors are supplied 1`] = `""`;
 
-exports[`gov-error-summary render should render without summary <p> if no summary is supplied 1`] = `
+exports[`gov-error-summary should render without summary <p> if no summary is supplied 1`] = `
 <div class="error-summary" role="group" aria-labelledby="error-summary-heading"
 tabindex="-1">
   <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Error Heading</h1>

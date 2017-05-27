@@ -3,8 +3,7 @@
   "version": "0.7.0",
   "description": "GOV.UK elements as nunjucks",
   "scripts": {
-    "test": "xo && jest",
-    "snapshot": "jest -- components/gov-error-summary/__tests__"
+    "test": "xo && jest"
   },
   "repository": {
     "type": "git",

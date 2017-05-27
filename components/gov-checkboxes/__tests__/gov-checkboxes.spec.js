@@ -18,6 +18,7 @@ describe('gov-checkBoxes', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`input-${name}-one`);
     expect(inputs.get(1).attribs.id).toBe(`input-${name}-two`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use ID attribute value over generated input-{name} ID and generate check boxes', () => {
@@ -34,6 +35,7 @@ describe('gov-checkBoxes', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`${id}-one`);
     expect(inputs.get(1).attribs.id).toBe(`${id}-two`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -53,6 +55,7 @@ describe('gov-checkBoxes', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`my-id-one`);
     expect(inputs.get(1).attribs.id).toBe(`my-id-two`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the check box to selected if value is set', () => {
@@ -72,6 +75,7 @@ describe('gov-checkBoxes', () => {
     expect(firstCheckBox.checked).toBe(undefined);
     expect(secondCheckBox.id).toBe(`my-id-two`);
     expect(secondCheckBox.checked).toBe('');
+    expect(output).toMatchSnapshot();
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -95,6 +99,7 @@ describe('gov-checkBoxes', () => {
 
     expect(formGroupClasses).toBe('form-group error');
     expect(errorMsg).toBe(error);
+    expect(output).toMatchSnapshot();
   });
   describe('checkbox options', () => {
     it('should add data fields when supplied', () => {
@@ -118,6 +123,7 @@ describe('gov-checkBoxes', () => {
       expect(firstRadio.name).toBe('selection');
       expect(firstRadio.value).toBe('one');
       expect(firstRadio['data-journey-click']).toBe('data-target-click');
+      expect(output).toMatchSnapshot();
     });
   });
   describe('class options', () => {
@@ -134,6 +140,7 @@ describe('gov-checkBoxes', () => {
       const labelClasses = $('.form-group legend span').attr('class');
 
       expect(labelClasses).toBe('form-label test-legend-class');
+      expect(output).toMatchSnapshot();
     });
   });
 });

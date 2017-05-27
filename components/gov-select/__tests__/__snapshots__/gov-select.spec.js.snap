@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gov-select class options should add classes to form-group div 1`] = `
+<div id="my-id-form" class="form-group test-group-class">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select class options should add classes to label span 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="test-label-class">select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select class options should add classes to select span 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control test-select-class" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select select options should add mutiple options based on options and placeholder 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="">placeholder</option>
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three" selected>Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select should add a form hint using the hint attribute 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+    <span class="form-hint">Select one of the below</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select should add error message and classes when passed an error object 1`] = `
+<div id="my-id-form" class="form-group error">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+    <span class="error-message">Select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select should set the ID as select-{name} if ID attr not supplied and generate a select 1`] = `
+<div id="select-selection-form" class="form-group">
+  <label for="select-selection">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control" id="select-selection" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select should set the option to selected if the value matches 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two" selected>Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;
+
+exports[`gov-select should use ID attribute value over generated select-{name} ID and generate select with three options 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">select an option</span>
+  </label>
+  <select class="form-control" id="my-id" name="selection">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+  </select>
+</div>
+`;

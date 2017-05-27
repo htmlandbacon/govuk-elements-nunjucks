@@ -14,6 +14,7 @@ describe('gov-textarea', () => {
     const textareaId = $('textarea').attr('id');
 
     expect(textareaId).toBe(`textarea-${name}`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use ID attribute value over generated textarea-{name} ID', () => {
@@ -27,6 +28,7 @@ describe('gov-textarea', () => {
     const textareaId = $('textarea').attr('id');
 
     expect(textareaId).toBe(id);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -40,6 +42,7 @@ describe('gov-textarea', () => {
     const formHintText = $('label .form-label-bold + span.form-hint').html();
 
     expect(formHintText).toBe(hint);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add maxlength to textarea using the maxlength attribute', () => {
@@ -53,6 +56,7 @@ describe('gov-textarea', () => {
     const textareaMaxlength = $('textarea').attr('maxlength');
 
     expect(textareaMaxlength).toBe(maxlength);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add rows attribute to textarea using the rows attribute', () => {
@@ -66,6 +70,7 @@ describe('gov-textarea', () => {
     const textareaRows = $('textarea').attr('rows');
 
     expect(textareaRows).toBe(rows);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the value of the textarea using the value attribute', () => {
@@ -79,6 +84,7 @@ describe('gov-textarea', () => {
     const textareaText = $('textarea').text();
 
     expect(textareaText).toBe(value);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -95,6 +101,7 @@ describe('gov-textarea', () => {
 
     expect(formGroupClasses).toBe('form-group error');
     expect(errorMsg).toBe(error);
+    expect(output).toMatchSnapshot();
   });
   describe('class options', () => {
     it('should add classes to textarea/label when supplied', () => {
@@ -109,6 +116,7 @@ describe('gov-textarea', () => {
 
       expect(labelClasses).toBe('test-label-class');
       expect(inputClasses).toBe('form-control test-input-class');
+      expect(output).toMatchSnapshot();
     });
     it('should default to class form-label-bold when label class is not supplied', () => {
       const classes = {input: 'test-input-class'};
@@ -122,6 +130,7 @@ describe('gov-textarea', () => {
 
       expect(labelClasses).toBe('form-label-bold');
       expect(inputClasses).toBe('form-control test-input-class');
+      expect(output).toMatchSnapshot();
     });
   });
 });

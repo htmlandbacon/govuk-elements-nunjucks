@@ -27,6 +27,7 @@ describe('gov-date-input', () => {
     expect(dayLabelFor, 'Matching label for Day not found');
     expect(monthLabelFor, 'Matching label for Month not found');
     expect(yearLabelFor, 'Matching label for Year not found');
+    expect(output).toMatchSnapshot();
   });
   it('should use the maxYear attr to set the max attr on year input', () => {
     const data = {
@@ -41,6 +42,7 @@ describe('gov-date-input', () => {
     const max = $('#input-birth-year').attr('max');
 
     expect(max).toBe(data.maxYear);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the values of the inputs using the value attribute', () => {
@@ -60,6 +62,7 @@ describe('gov-date-input', () => {
     expect(dayValue).toBe(data.value.day);
     expect(monthValue).toBe(data.value.month);
     expect(yearValue).toBe(data.value.year);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -75,6 +78,7 @@ describe('gov-date-input', () => {
     const formHintText = $('legend span.form-hint').html();
 
     expect(formHintText).toBe(data.hint);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use the maxYear attr to set the max attr on year input', () => {
@@ -90,5 +94,6 @@ describe('gov-date-input', () => {
     const max = $('#input-birth-year').attr('max');
 
     expect(max).toBe(data.maxYear);
+    expect(output).toMatchSnapshot();
   });
 });

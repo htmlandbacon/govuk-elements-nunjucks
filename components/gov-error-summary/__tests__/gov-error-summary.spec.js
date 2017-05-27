@@ -24,6 +24,7 @@ describe('gov-error-summary', () => {
     expect(links.get(0).children[0].data).toBe(`This is an error 1`);
     expect(links.get(1).attribs.href).toBe(`#link-2-form`);
     expect(links.get(1).children[0].data).toBe(`This is an error 2`);
+    expect(output).toMatchSnapshot();
   });
   it('should render without summary <p> if no summary is supplied', () => {
     const output = nunjucks.render('./components/gov-error-summary/template.njk', {
@@ -43,11 +44,13 @@ describe('gov-error-summary', () => {
     expect(links.get(0).children[0].data).toBe(`This is an error 1`);
     expect(links.get(1).attribs.href).toBe(`#link-2-form`);
     expect(links.get(1).children[0].data).toBe(`This is an error 2`);
+    expect(output).toMatchSnapshot();
   });
   it('should render nothing when no errors are supplied', () => {
     const output = nunjucks.render('./components/gov-error-summary/template.njk', {
       heading: 'Error Heading'
     });
     expect(output).toBe(``);
+    expect(output).toMatchSnapshot();
   });
 });

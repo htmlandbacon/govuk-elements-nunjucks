@@ -16,6 +16,7 @@ describe('gov-select', () => {
     const $ = cheerio.load(output);
     const selectID = $('select').attr('id');
     expect(selectID).toBe(`select-${name}`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use ID attribute value over generated select-{name} ID and generate select with three options', () => {
@@ -34,6 +35,7 @@ describe('gov-select', () => {
     expect(selectOptions).toHaveLength(3);
     expect(selectOptions.get(0).attribs.value).toBe(`one`);
     expect(selectOptions.get(1).attribs.value).toBe(`two`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -53,6 +55,7 @@ describe('gov-select', () => {
     expect(selectOptions).toHaveLength(3);
     expect(selectOptions.get(0).attribs.value).toBe(`one`);
     expect(selectOptions.get(1).attribs.value).toBe(`two`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the option to selected if the value matches', () => {
@@ -73,6 +76,7 @@ describe('gov-select', () => {
     expect(firstOption.selected).toBe(undefined);
     expect(secondOption.value).toBe(`two`);
     expect(secondOption.selected).toBe('');
+    expect(output).toMatchSnapshot();
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -91,6 +95,7 @@ describe('gov-select', () => {
 
     expect(formGroupClasses).toBe('form-group error');
     expect(errorMsg).toBe(error);
+    expect(output).toMatchSnapshot();
   });
   describe('select options', () => {
     it('should add mutiple options based on options and placeholder', () => {
@@ -119,6 +124,7 @@ describe('gov-select', () => {
       expect(thirdOption.selected).toBe(undefined);
       expect(forthOption.value).toBe(`three`);
       expect(forthOption.selected).toBe('');
+      expect(output).toMatchSnapshot();
     });
   });
   describe('class options', () => {
@@ -135,6 +141,7 @@ describe('gov-select', () => {
       const labelClasses = $('.form-group label span').attr('class');
 
       expect(labelClasses).toBe('test-label-class');
+      expect(output).toMatchSnapshot();
     });
     it('should add classes to form-group div', () => {
       const classes = {fromGroup: 'test-group-class'};
@@ -148,6 +155,7 @@ describe('gov-select', () => {
       const $ = cheerio.load(output);
       const formGroupClasses = $('.form-group').attr('class');
       expect(formGroupClasses).toBe('form-group test-group-class');
+      expect(output).toMatchSnapshot();
     });
     it('should add classes to select span', () => {
       const classes = {selectClass: 'test-select-class'};
@@ -161,6 +169,7 @@ describe('gov-select', () => {
       const $ = cheerio.load(output);
       const selectClasses = $('.form-control').attr('class');
       expect(selectClasses).toBe('form-control test-select-class');
+      expect(output).toMatchSnapshot();
     });
   });
 });

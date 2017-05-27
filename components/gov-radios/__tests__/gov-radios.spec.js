@@ -18,6 +18,7 @@ describe('gov-radios', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`input-${name}-yes`);
     expect(inputs.get(1).attribs.id).toBe(`input-${name}-no`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use ID attribute value over generated input-{name} ID and generate radio buttons', () => {
@@ -33,6 +34,7 @@ describe('gov-radios', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`${id}-yes`);
     expect(inputs.get(1).attribs.id).toBe(`${id}-no`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -52,6 +54,7 @@ describe('gov-radios', () => {
     expect(inputs).toHaveLength(2);
     expect(inputs.get(0).attribs.id).toBe(`my-id-yes`);
     expect(inputs.get(1).attribs.id).toBe(`my-id-no`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the radio button to checked if the value matches', () => {
@@ -72,6 +75,7 @@ describe('gov-radios', () => {
     expect(firstRadio.checked).toBe(undefined);
     expect(secondRadio.id).toBe(`my-id-no`);
     expect(secondRadio.checked).toBe('');
+    expect(output).toMatchSnapshot();
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -95,6 +99,7 @@ describe('gov-radios', () => {
 
     expect(formGroupClasses).toBe('form-group error');
     expect(errorMsg).toBe(error);
+    expect(output).toMatchSnapshot();
   });
   describe('radio button options', () => {
     it('should add data fields when supplied', () => {
@@ -122,6 +127,7 @@ describe('gov-radios', () => {
       expect(firstRadio.name).toBe('selection');
       expect(firstRadio.value).toBe('value-id');
       expect(firstRadio['data-journey-click']).toBe('data-target-click');
+      expect(output).toMatchSnapshot();
     });
   });
   describe('class options', () => {
@@ -138,6 +144,7 @@ describe('gov-radios', () => {
       const labelClasses = $('.form-group legend span').attr('class');
 
       expect(labelClasses).toBe('form-label test-legend-class');
+      expect(output).toMatchSnapshot();
     });
     it('should add inline class to form to fieldset when two radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
@@ -152,6 +159,7 @@ describe('gov-radios', () => {
       const labelClasses = $('fieldset').attr('class');
 
       expect(labelClasses).toBe('inline');
+      expect(output).toMatchSnapshot();
     });
     it('should have no classes on fieldset when two or more radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
@@ -166,6 +174,7 @@ describe('gov-radios', () => {
       const labelClasses = $('fieldset').attr('class');
 
       expect(labelClasses).toBe(undefined);
+      expect(output).toMatchSnapshot();
     });
   });
 });

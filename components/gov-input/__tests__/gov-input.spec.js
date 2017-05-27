@@ -14,6 +14,7 @@ describe('gov-input', () => {
     const inputId = $('input').attr('id');
 
     expect(inputId).toBe(`input-${name}`);
+    expect(output).toMatchSnapshot();
   });
 
   it('should use ID attribute value over generated input-{name} ID', () => {
@@ -27,6 +28,7 @@ describe('gov-input', () => {
     const inputId = $('input').attr('id');
 
     expect(inputId).toBe(id);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -40,6 +42,7 @@ describe('gov-input', () => {
     const formHintText = $('label span.form-hint').html();
 
     expect(formHintText).toBe(hint);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add maxlength to input using the maxlength attribute', () => {
@@ -53,6 +56,7 @@ describe('gov-input', () => {
     const inputMaxlength = $('input').attr('maxlength');
 
     expect(inputMaxlength).toBe(maxlength);
+    expect(output).toMatchSnapshot();
   });
 
   it('should set the value of the input using the value attribute', () => {
@@ -66,6 +70,7 @@ describe('gov-input', () => {
     const inputValue = $('input').attr('value');
 
     expect(inputValue).toBe(value);
+    expect(output).toMatchSnapshot();
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -82,6 +87,7 @@ describe('gov-input', () => {
 
     expect(formGroupClasses).toBe('form-group error');
     expect(errorMsg).toBe(error);
+    expect(output).toMatchSnapshot();
   });
   describe('class options', () => {
     it('should add classes to input/label when supplied', () => {
@@ -96,6 +102,7 @@ describe('gov-input', () => {
 
       expect(labelClasses).toBe('test-label-class');
       expect(inputClasses).toBe('form-control test-input-class');
+      expect(output).toMatchSnapshot();
     });
     it('should default to class form-label-bold when label class is not supplied', () => {
       const classes = {input: 'test-input-class'};
@@ -109,6 +116,7 @@ describe('gov-input', () => {
 
       expect(labelClasses).toBe('form-label-bold');
       expect(inputClasses).toBe('form-control test-input-class');
+      expect(output).toMatchSnapshot();
     });
   });
 });

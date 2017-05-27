@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gov-input class options should add classes to input/label when supplied 1`] = `
+<div id="input-undefined-form" class="form-group">
+  <label for="input-undefined">
+    <span class="test-label-class">Full name</span>
+  </label>
+  <input class="form-control test-input-class" id="input-undefined" name=""
+  type="text" value="" />
+</div>
+`;
+
+exports[`gov-input class options should default to class form-label-bold when label class is not supplied 1`] = `
+<div id="input-undefined-form" class="form-group">
+  <label for="input-undefined">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <input class="form-control test-input-class" id="input-undefined" name=""
+  type="text" value="" />
+</div>
+`;
+
+exports[`gov-input should add a form hint using the hint attribute 1`] = `
+<div id="input-full-name-form" class="form-group">
+  <label for="input-full-name">
+    <span class="form-label-bold">Full name</span>
+    <span class="form-hint">All your names</span>
+  </label>
+  <input class="form-control" id="input-full-name" name="full-name" type="text"
+  value="" />
+</div>
+`;
+
+exports[`gov-input should add error message and classes when passed an error object 1`] = `
+<div id="input-full-name-form" class="form-group error">
+  <label for="input-full-name">
+    <span class="form-label-bold">Full name</span>
+    <span class="error-message">Name is wrong</span>
+  </label>
+  <input class="form-control" id="input-full-name" name="full-name" type="text"
+  value="" />
+</div>
+`;
+
+exports[`gov-input should add maxlength to input using the maxlength attribute 1`] = `
+<div id="input-full-name-form" class="form-group">
+  <label for="input-full-name">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <input class="form-control" id="input-full-name" maxlength="20" name="full-name"
+  type="text" value="" />
+</div>
+`;
+
+exports[`gov-input should set the ID as input-{name} if ID attr not supplied 1`] = `
+<div id="input-full-name-form" class="form-group">
+  <label for="input-full-name">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <input class="form-control" id="input-full-name" name="full-name" type="text"
+  value="" />
+</div>
+`;
+
+exports[`gov-input should set the value of the input using the value attribute 1`] = `
+<div id="input-full-name-form" class="form-group">
+  <label for="input-full-name">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <input class="form-control" id="input-full-name" name="full-name" type="text"
+  value="Testy McTesterson" />
+</div>
+`;
+
+exports[`gov-input should use ID attribute value over generated input-{name} ID 1`] = `
+<div id="my-id-form" class="form-group">
+  <label for="my-id">
+    <span class="form-label-bold">Full name</span>
+  </label>
+  <input class="form-control" id="my-id" name="full-name" type="text" value=""
+  />
+</div>
+`;
