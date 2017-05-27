@@ -2,7 +2,6 @@
 
 const nunjucks = require('nunjucks');
 const cheerio = require('cheerio');
-const expect = require('chai').expect;
 
 const yesNoRadios = [{id: 'yes', label: 'Yes', value: 'yes'}, {id: 'no', label: 'No', value: 'no'}];
 const yesNoMaybeRadios = [{id: 'yes', label: 'Yes', value: 'yes'}, {id: 'no', label: 'No', value: 'no'}, {id: 'maybe', label: 'Maybe', value: 'maybe'}];
@@ -16,9 +15,9 @@ describe('gov-radios', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`input-${name}-yes`);
-    expect(inputs.get(1).attribs.id).to.equal(`input-${name}-no`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`input-${name}-yes`);
+    expect(inputs.get(1).attribs.id).toBe(`input-${name}-no`);
   });
 
   it('should use ID attribute value over generated input-{name} ID and generate radio buttons', () => {
@@ -31,9 +30,9 @@ describe('gov-radios', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`${id}-yes`);
-    expect(inputs.get(1).attribs.id).to.equal(`${id}-no`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`${id}-yes`);
+    expect(inputs.get(1).attribs.id).toBe(`${id}-no`);
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -47,12 +46,12 @@ describe('gov-radios', () => {
     });
     const $ = cheerio.load(output);
     const hintText = $('legend span.form-hint').text();
-    expect(hintText).to.equal(hint);
+    expect(hintText).toBe(hint);
 
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`my-id-yes`);
-    expect(inputs.get(1).attribs.id).to.equal(`my-id-no`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`my-id-yes`);
+    expect(inputs.get(1).attribs.id).toBe(`my-id-no`);
   });
 
   it('should set the radio button to checked if the value matches', () => {
@@ -66,13 +65,13 @@ describe('gov-radios', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
+    expect(inputs).toHaveLength(2);
     const firstRadio = inputs.get(0).attribs;
     const secondRadio = inputs.get(1).attribs;
-    expect(firstRadio.id).to.equal(`my-id-yes`);
-    expect(firstRadio.checked).to.equal(undefined);
-    expect(secondRadio.id).to.equal(`my-id-no`);
-    expect(secondRadio.checked).to.equal('');
+    expect(firstRadio.id).toBe(`my-id-yes`);
+    expect(firstRadio.checked).toBe(undefined);
+    expect(secondRadio.id).toBe(`my-id-no`);
+    expect(secondRadio.checked).toBe('');
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -87,15 +86,15 @@ describe('gov-radios', () => {
     const $ = cheerio.load(output);
 
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`my-id-yes`);
-    expect(inputs.get(1).attribs.id).to.equal(`my-id-no`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`my-id-yes`);
+    expect(inputs.get(1).attribs.id).toBe(`my-id-no`);
 
     const formGroupClasses = $('.form-group').attr('class');
     const errorMsg = $('legend span.error-message').text();
 
-    expect(formGroupClasses).to.equal('form-group error');
-    expect(errorMsg).to.equal(error);
+    expect(formGroupClasses).toBe('form-group error');
+    expect(errorMsg).toBe(error);
   });
   describe('radio button options', () => {
     it('should add data fields when supplied', () => {
@@ -114,14 +113,15 @@ describe('gov-radios', () => {
 
       const $ = cheerio.load(output);
       const firstLabel = $('label');
-      expect(firstLabel.text()).to.contain('label-id');
-      expect(firstLabel.get(0).attribs['data-target']).to.equal('data-target');
+      const labelCheck = expect.stringContaining('label-id');
+      expect(firstLabel.text()).toEqual(labelCheck);
+      expect(firstLabel.get(0).attribs['data-target']).toBe('data-target');
 
       const firstRadio = $('input').get(0).attribs;
-      expect(firstRadio.id).to.equal('my-id-id');
-      expect(firstRadio.name).to.equal('selection');
-      expect(firstRadio.value).to.equal('value-id');
-      expect(firstRadio['data-journey-click']).to.equal('data-target-click');
+      expect(firstRadio.id).toBe('my-id-id');
+      expect(firstRadio.name).toBe('selection');
+      expect(firstRadio.value).toBe('value-id');
+      expect(firstRadio['data-journey-click']).toBe('data-target-click');
     });
   });
   describe('class options', () => {
@@ -137,7 +137,7 @@ describe('gov-radios', () => {
       const $ = cheerio.load(output);
       const labelClasses = $('.form-group legend span').attr('class');
 
-      expect(labelClasses).to.equal('form-label test-legend-class');
+      expect(labelClasses).toBe('form-label test-legend-class');
     });
     it('should add inline class to form to fieldset when two radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
@@ -151,7 +151,7 @@ describe('gov-radios', () => {
       const $ = cheerio.load(output);
       const labelClasses = $('fieldset').attr('class');
 
-      expect(labelClasses).to.equal('inline');
+      expect(labelClasses).toBe('inline');
     });
     it('should have no classes on fieldset when two or more radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
@@ -165,7 +165,7 @@ describe('gov-radios', () => {
       const $ = cheerio.load(output);
       const labelClasses = $('fieldset').attr('class');
 
-      expect(labelClasses).to.equal(undefined);
+      expect(labelClasses).toBe(undefined);
     });
   });
 });

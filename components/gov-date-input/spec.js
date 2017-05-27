@@ -2,7 +2,6 @@
 
 const nunjucks = require('nunjucks');
 const cheerio = require('cheerio');
-const expect = require('chai').expect;
 
 describe('gov-date-input', () => {
   it('should use ID attribute value over generated IDs', () => {
@@ -41,7 +40,7 @@ describe('gov-date-input', () => {
     const $ = cheerio.load(output);
     const max = $('#input-birth-year').attr('max');
 
-    expect(max).to.equal(data.maxYear);
+    expect(max).toBe(data.maxYear);
   });
 
   it('should set the values of the inputs using the value attribute', () => {
@@ -58,9 +57,9 @@ describe('gov-date-input', () => {
     const monthValue = $('#input-birth-month').attr('value');
     const yearValue = $('#input-birth-year').attr('value');
 
-    expect(dayValue).to.equal(data.value.day);
-    expect(monthValue).to.equal(data.value.month);
-    expect(yearValue).to.equal(data.value.year);
+    expect(dayValue).toBe(data.value.day);
+    expect(monthValue).toBe(data.value.month);
+    expect(yearValue).toBe(data.value.year);
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -75,7 +74,7 @@ describe('gov-date-input', () => {
 
     const formHintText = $('legend span.form-hint').html();
 
-    expect(formHintText).to.equal(data.hint);
+    expect(formHintText).toBe(data.hint);
   });
 
   it('should use the maxYear attr to set the max attr on year input', () => {
@@ -90,6 +89,6 @@ describe('gov-date-input', () => {
     const $ = cheerio.load(output);
     const max = $('#input-birth-year').attr('max');
 
-    expect(max).to.equal(data.maxYear);
+    expect(max).toBe(data.maxYear);
   });
 });

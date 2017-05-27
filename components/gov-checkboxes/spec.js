@@ -2,7 +2,6 @@
 
 const nunjucks = require('nunjucks');
 const cheerio = require('cheerio');
-const expect = require('chai').expect;
 
 const checkBoxesTwo = [{id: 'one', label: 'One', value: 'one'}, {id: 'two', label: 'Two', value: 'two'}];
 
@@ -16,9 +15,9 @@ describe('gov-checkBoxes', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`input-${name}-one`);
-    expect(inputs.get(1).attribs.id).to.equal(`input-${name}-two`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`input-${name}-one`);
+    expect(inputs.get(1).attribs.id).toBe(`input-${name}-two`);
   });
 
   it('should use ID attribute value over generated input-{name} ID and generate check boxes', () => {
@@ -32,9 +31,9 @@ describe('gov-checkBoxes', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`${id}-one`);
-    expect(inputs.get(1).attribs.id).to.equal(`${id}-two`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`${id}-one`);
+    expect(inputs.get(1).attribs.id).toBe(`${id}-two`);
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -48,12 +47,12 @@ describe('gov-checkBoxes', () => {
     });
     const $ = cheerio.load(output);
     const hintText = $('legend span.form-hint').text();
-    expect(hintText).to.equal(hint);
+    expect(hintText).toBe(hint);
 
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`my-id-one`);
-    expect(inputs.get(1).attribs.id).to.equal(`my-id-two`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`my-id-one`);
+    expect(inputs.get(1).attribs.id).toBe(`my-id-two`);
   });
 
   it('should set the check box to selected if value is set', () => {
@@ -66,13 +65,13 @@ describe('gov-checkBoxes', () => {
     });
     const $ = cheerio.load(output);
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
+    expect(inputs).toHaveLength(2);
     const firstCheckBox = inputs.get(0).attribs;
     const secondCheckBox = inputs.get(1).attribs;
-    expect(firstCheckBox.id).to.equal(`my-id-one`);
-    expect(firstCheckBox.checked).to.equal(undefined);
-    expect(secondCheckBox.id).to.equal(`my-id-two`);
-    expect(secondCheckBox.checked).to.equal('');
+    expect(firstCheckBox.id).toBe(`my-id-one`);
+    expect(firstCheckBox.checked).toBe(undefined);
+    expect(secondCheckBox.id).toBe(`my-id-two`);
+    expect(secondCheckBox.checked).toBe('');
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -87,15 +86,15 @@ describe('gov-checkBoxes', () => {
     const $ = cheerio.load(output);
 
     const inputs = $('input');
-    expect(inputs).to.be.length(2);
-    expect(inputs.get(0).attribs.id).to.equal(`my-id-one`);
-    expect(inputs.get(1).attribs.id).to.equal(`my-id-two`);
+    expect(inputs).toHaveLength(2);
+    expect(inputs.get(0).attribs.id).toBe(`my-id-one`);
+    expect(inputs.get(1).attribs.id).toBe(`my-id-two`);
 
     const formGroupClasses = $('.form-group').attr('class');
     const errorMsg = $('legend span.error-message').text();
 
-    expect(formGroupClasses).to.equal('form-group error');
-    expect(errorMsg).to.equal(error);
+    expect(formGroupClasses).toBe('form-group error');
+    expect(errorMsg).toBe(error);
   });
   describe('checkbox options', () => {
     it('should add data fields when supplied', () => {
@@ -110,14 +109,15 @@ describe('gov-checkBoxes', () => {
 
       const $ = cheerio.load(output);
       const firstLabel = $('label');
-      expect(firstLabel.text()).to.contain('One');
-      expect(firstLabel.get(0).attribs['data-target']).to.equal('data-target');
+      const oneCheck = expect.stringContaining('One');
+      expect(firstLabel.text()).toEqual(oneCheck);
+      expect(firstLabel.get(0).attribs['data-target']).toBe('data-target');
 
       const firstRadio = $('input').get(0).attribs;
-      expect(firstRadio.id).to.equal('my-id-one');
-      expect(firstRadio.name).to.equal('selection');
-      expect(firstRadio.value).to.equal('one');
-      expect(firstRadio['data-journey-click']).to.equal('data-target-click');
+      expect(firstRadio.id).toBe('my-id-one');
+      expect(firstRadio.name).toBe('selection');
+      expect(firstRadio.value).toBe('one');
+      expect(firstRadio['data-journey-click']).toBe('data-target-click');
     });
   });
   describe('class options', () => {
@@ -133,7 +133,7 @@ describe('gov-checkBoxes', () => {
       const $ = cheerio.load(output);
       const labelClasses = $('.form-group legend span').attr('class');
 
-      expect(labelClasses).to.equal('form-label test-legend-class');
+      expect(labelClasses).toBe('form-label test-legend-class');
     });
   });
 });

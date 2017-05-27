@@ -2,7 +2,6 @@
 
 const nunjucks = require('nunjucks');
 const cheerio = require('cheerio');
-const expect = require('chai').expect;
 
 describe('gov-textarea', () => {
   it('should set the ID as textarea-{name} if ID attr not supplied', () => {
@@ -14,7 +13,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const textareaId = $('textarea').attr('id');
 
-    expect(textareaId).to.equal(`textarea-${name}`);
+    expect(textareaId).toBe(`textarea-${name}`);
   });
 
   it('should use ID attribute value over generated textarea-{name} ID', () => {
@@ -27,7 +26,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const textareaId = $('textarea').attr('id');
 
-    expect(textareaId).to.equal(id);
+    expect(textareaId).toBe(id);
   });
 
   it('should add a form hint using the hint attribute', () => {
@@ -40,7 +39,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const formHintText = $('label .form-label-bold + span.form-hint').html();
 
-    expect(formHintText).to.equal(hint);
+    expect(formHintText).toBe(hint);
   });
 
   it('should add maxlength to textarea using the maxlength attribute', () => {
@@ -53,7 +52,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const textareaMaxlength = $('textarea').attr('maxlength');
 
-    expect(textareaMaxlength).to.equal(maxlength);
+    expect(textareaMaxlength).toBe(maxlength);
   });
 
   it('should add rows attribute to textarea using the rows attribute', () => {
@@ -66,7 +65,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const textareaRows = $('textarea').attr('rows');
 
-    expect(textareaRows).to.equal(rows);
+    expect(textareaRows).toBe(rows);
   });
 
   it('should set the value of the textarea using the value attribute', () => {
@@ -79,7 +78,7 @@ describe('gov-textarea', () => {
     const $ = cheerio.load(output);
     const textareaText = $('textarea').text();
 
-    expect(textareaText).to.equal(value);
+    expect(textareaText).toBe(value);
   });
 
   it('should add error message and classes when passed an error object', () => {
@@ -94,8 +93,8 @@ describe('gov-textarea', () => {
     const formGroupClasses = $('.form-group').attr('class');
     const errorMsg = $('label .form-label-bold + span.error-message').text();
 
-    expect(formGroupClasses).to.equal('form-group error');
-    expect(errorMsg).to.equal(error);
+    expect(formGroupClasses).toBe('form-group error');
+    expect(errorMsg).toBe(error);
   });
   describe('class options', () => {
     it('should add classes to textarea/label when supplied', () => {
@@ -108,8 +107,8 @@ describe('gov-textarea', () => {
       const labelClasses = $('.form-group label span').attr('class');
       const inputClasses = $('.form-group textarea').attr('class');
 
-      expect(labelClasses).to.equal('test-label-class');
-      expect(inputClasses).to.equal('form-control test-input-class');
+      expect(labelClasses).toBe('test-label-class');
+      expect(inputClasses).toBe('form-control test-input-class');
     });
     it('should default to class form-label-bold when label class is not supplied', () => {
       const classes = {input: 'test-input-class'};
@@ -121,8 +120,8 @@ describe('gov-textarea', () => {
       const labelClasses = $('.form-group label span').attr('class');
       const inputClasses = $('.form-group textarea').attr('class');
 
-      expect(labelClasses).to.equal('form-label-bold');
-      expect(inputClasses).to.equal('form-control test-input-class');
+      expect(labelClasses).toBe('form-label-bold');
+      expect(inputClasses).toBe('form-control test-input-class');
     });
   });
 });

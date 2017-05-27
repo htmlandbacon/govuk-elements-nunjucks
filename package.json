@@ -3,7 +3,8 @@
   "version": "0.7.0",
   "description": "GOV.UK elements as nunjucks",
   "scripts": {
-    "test": "xo && mocha components/**/spec.js"
+    "test": "xo && jest",
+    "snapshot": "jest -- components/gov-error-summary/__tests__"
   },
   "repository": {
     "type": "git",
@@ -20,21 +21,25 @@
     "url": "https://github.com/htmlandbacon/govuk-elements-nunjucks/issues"
   },
   "homepage": "https://github.com/htmlandbacon/govuk-elements-nunjucks#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "snapshotSerializers": ["jest-serializer-html-string"]
+  },
   "xo": {
     "esnext": true,
     "space": true,
     "env": [
       "node",
-      "mocha"
+      "jest"
     ],
     "rules": {
       "max-lines": 0
     }
   },
-  "dependencies": {
-    "chai": "^3.5.0",
+  "devDependencies": {
     "cheerio": "^0.22.0",
-    "mocha": "^3.2.0",
+    "jest": "^20.0.4",
+    "jest-serializer-html-string": "^1.0.1",
     "nunjucks": "^3.0.0"
   }
 }

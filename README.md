@@ -18,17 +18,15 @@ Current components:
 
 - gov-checkboxes
 - gov-date-input
+- gov-error-summary
 - gov-input
 - gov-radio
-- gov-textarea
 - gov-select
-- gov-error-summary
+- gov-textarea
 
 Things to add/improve
 
-- clean up testing
 - common approach to data-attributes
-- documentation
 - update radios to be new style
 
 ## Examples
@@ -73,6 +71,7 @@ Feel free to open an [issue](https://github.com/htmlandbacon/govuk-elements-nunj
 ## Links
 
 - [nunjucks](https://mozilla.github.io/nunjucks/)
+- [Jest](https://facebook.github.io/jest/)
 - [GOVUK elements nunjucks](https://github.com/htmlandbacon/govuk-elements-nunjucks)
 - [GOVUK elements](https://github.com/alphagov/govuk_elements)
 - [GOV.UK frontend toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
