@@ -119,34 +119,3 @@ exports[`gov-date-input should use the maxYear attr to set the max attr on year 
   </fieldset>
 </div>
 `;
-
-exports[`gov-date-input should use the maxYear attr to set the max attr on year input 2`] = `
-<div id="input-birth-form" class="form-group">
-  <fieldset>
-    <div class="form-date">
-      <legend>
-        <span class="form-label-bold">Date of birth</span>
-        <span class="form-hint">For example, 31 3 1980</span>
-      </legend>
-      <div class="form-group form-group-day">
-        <label for="input-birth-day">Day</label>
-        <input class="form-control" id="input-birth-day" name="birthDay"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
-      </div>
-      <div class="form-group form-group-month">
-        <label for="input-birth-month">Month</label>
-        <input class="form-control" id="input-birth-month" name="birthMonth"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
-      </div>
-      <div class="form-group form-group-year">
-        <label for="input-birth-year">Year</label>
-        <input class="form-control" id="input-birth-year" name="birthYear"
-        value="" type="number" pattern="[0-9]*" min="0" max="2020" maxlength="4"
-        />
-      </div>
-    </div>
-  </fieldset>
-</div>
-`;

@@ -29,21 +29,6 @@ describe('gov-date-input', () => {
     expect(yearLabelFor, 'Matching label for Year not found');
     expect(output).toMatchSnapshot();
   });
-  it('should use the maxYear attr to set the max attr on year input', () => {
-    const data = {
-      legend: 'Date of birth',
-      hint: 'For example, 31 3 1980',
-      name: 'birth',
-      maxYear: '2020'
-    };
-
-    const output = nunjucks.render('./components/gov-date-input/template.njk', data);
-    const $ = cheerio.load(output);
-    const max = $('#input-birth-year').attr('max');
-
-    expect(max).toBe(data.maxYear);
-    expect(output).toMatchSnapshot();
-  });
 
   it('should set the values of the inputs using the value attribute', () => {
     const data = {
