@@ -20,8 +20,7 @@
                         type="number"
                         pattern="[0-9]*"
                         min="0"
-                        max="31"
-                        maxlength="2" />
+                        max="31" />
             </div>
             
             <div class="form-group form-group-month">
@@ -33,8 +32,7 @@
                         type="number"
                         pattern="[0-9]*"
                         min="0"
-                        max="31"
-                        maxlength="2" />
+                        max="31" />
             </div>
 
             <div class="form-group form-group-year">
@@ -46,8 +44,7 @@
                         type="number"
                         pattern="[0-9]*"
                         min="0"
-                        {% if maxYear %}max="{{maxYear}}"{% endif %}
-                        maxlength="4" />
+                        {% if maxYear %}max="{{maxYear}}"{% endif %} />
             </div>
         </div>
     </fieldset>

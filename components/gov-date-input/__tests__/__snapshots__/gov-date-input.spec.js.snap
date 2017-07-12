@@ -11,19 +11,17 @@ exports[`gov-date-input should add a form hint using the hint attribute 1`] = `
       <div class="form-group form-group-day">
         <label for="input-birth-day">Day</label>
         <input class="form-control" id="input-birth-day" name="birthDay"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-month">
         <label for="input-birth-month">Month</label>
         <input class="form-control" id="input-birth-month" name="birthMonth"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-year">
         <label for="input-birth-year">Year</label>
         <input class="form-control" id="input-birth-year" name="birthYear"
-        value="" type="number" pattern="[0-9]*" min="0" maxlength="4" />
+        value="" type="number" pattern="[0-9]*" min="0" />
       </div>
     </div>
   </fieldset>
@@ -41,19 +39,17 @@ exports[`gov-date-input should set the values of the inputs using the value attr
       <div class="form-group form-group-day">
         <label for="input-birth-day">Day</label>
         <input class="form-control" id="input-birth-day" name="birthDay"
-        value="12" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="12" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-month">
         <label for="input-birth-month">Month</label>
         <input class="form-control" id="input-birth-month" name="birthMonth"
-        value="12" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="12" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-year">
         <label for="input-birth-year">Year</label>
         <input class="form-control" id="input-birth-year" name="birthYear"
-        value="2015" type="number" pattern="[0-9]*" min="0" maxlength="4" />
+        value="2015" type="number" pattern="[0-9]*" min="0" />
       </div>
     </div>
   </fieldset>
@@ -71,18 +67,17 @@ exports[`gov-date-input should use ID attribute value over generated IDs 1`] = `
       <div class="form-group form-group-day">
         <label for="egg-day">Day</label>
         <input class="form-control" id="egg-day" name="birthDay" value=""
-        type="number" pattern="[0-9]*" min="0" max="31" maxlength="2" />
+        type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-month">
         <label for="egg-month">Month</label>
         <input class="form-control" id="egg-month" name="birthMonth"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-year">
         <label for="egg-year">Year</label>
         <input class="form-control" id="egg-year" name="birthYear"
-        value="" type="number" pattern="[0-9]*" min="0" maxlength="4" />
+        value="" type="number" pattern="[0-9]*" min="0" />
       </div>
     </div>
   </fieldset>
@@ -100,20 +95,17 @@ exports[`gov-date-input should use the maxYear attr to set the max attr on year 
       <div class="form-group form-group-day">
         <label for="input-birth-day">Day</label>
         <input class="form-control" id="input-birth-day" name="birthDay"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-month">
         <label for="input-birth-month">Month</label>
         <input class="form-control" id="input-birth-month" name="birthMonth"
-        value="" type="number" pattern="[0-9]*" min="0" max="31" maxlength="2"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="31" />
       </div>
       <div class="form-group form-group-year">
         <label for="input-birth-year">Year</label>
         <input class="form-control" id="input-birth-year" name="birthYear"
-        value="" type="number" pattern="[0-9]*" min="0" max="2020" maxlength="4"
-        />
+        value="" type="number" pattern="[0-9]*" min="0" max="2020" />
       </div>
     </div>
   </fieldset>
