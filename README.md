@@ -1,6 +1,8 @@
 # govuk-elements-nunjucks
 
-GOVUK elements, nunjucks style
+GOVUK elements, nunjucks style.
+
+This includes a selection form macros from [GOV.UK elements](http://govuk-elements.herokuapp.com/), these are using [nunjucks](https://mozilla.github.io/nunjucks/) and provide a component that can be configured, this encapsulates - text, data, error state, classes and values.
 
 This is a mirror of [govuk-elelemt-marko](https://github.com/gunjam/govuk-elements-marko) in nunjucks.
 
