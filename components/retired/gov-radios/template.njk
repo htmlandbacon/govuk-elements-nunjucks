@@ -11,10 +11,12 @@
         </legend>
         
         {% for radio in radioButtons %}
-            <div class="multiple-choice"{% if radio.dataTarget %} data-target="{{radio.dataTarget}}"{% endif %}{% if radio.dataJourneyClick %} data-journey-click="{{radio.dataJourneyClick}}"{% endif %}>
-                <input id="{{id}}-{{radio.id}}" type="radio" name="{{name}}" value="{{radio.value}}" {% if value == radio.value %} checked{% endif %} />
-                <label for="{{id}}-{{radio.id}}">{{radio.label}}</label>
-            </div>
+            <label class="block-label" for="{{id}}-{{radio.id}}"
+            {% if radio.dataTarget %} data-target="{{radio.dataTarget}}"{% endif %}>
+                <input id="{{id}}-{{radio.id}}" type="radio" name="{{name}}" value="{{radio.value}}" {% if value == radio.value %} checked{% endif %}
+                {% if radio.dataJourneyClick %} data-journey-click="{{radio.dataJourneyClick}}"{% endif %}>
+                {{radio.label}}
+            </label>
         {% endfor %}
     </fieldset>
 </div>

@@ -8,7 +8,7 @@ const yesNoMaybeRadios = [{id: 'yes', label: 'Yes', value: 'yes'}, {id: 'no', la
 describe('gov-radios', () => {
   it('should set the ID as input-{name} if ID attr not supplied and generate radio buttons', () => {
     const name = 'selection';
-    const output = nunjucks.render('./components/gov-radios/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
       legend: 'Select a radio button',
       radioButtons: yesNoRadios,
       name
@@ -23,7 +23,7 @@ describe('gov-radios', () => {
 
   it('should use ID attribute value over generated input-{name} ID and generate radio buttons', () => {
     const id = 'my-id';
-    const output = nunjucks.render('./components/gov-radios/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
       legend: 'Select a radio button',
       radioButtons: yesNoRadios,
       name: 'selection',
@@ -39,7 +39,7 @@ describe('gov-radios', () => {
 
   it('should add a form hint using the hint attribute', () => {
     const hint = 'Select one of the below';
-    const output = nunjucks.render('./components/gov-radios/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
       legend: 'Select a radio button',
       radioButtons: yesNoRadios,
       name: 'selection',
@@ -59,7 +59,7 @@ describe('gov-radios', () => {
 
   it('should set the radio button to checked if the value matches', () => {
     const value = 'no';
-    const output = nunjucks.render('./components/gov-radios/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
       legend: 'Select a radio button',
       radioButtons: yesNoRadios,
       name: 'selection',
@@ -80,7 +80,7 @@ describe('gov-radios', () => {
 
   it('should add error message and classes when passed an error object', () => {
     const error = 'Select an option';
-    const output = nunjucks.render('./components/gov-radios/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
       legend: 'Select a radio button',
       radioButtons: yesNoRadios,
       name: 'selection',
@@ -109,32 +109,31 @@ describe('gov-radios', () => {
         dataTarget: 'data-target',
         dataJourneyClick: 'data-target-click'}];
 
-      const output = nunjucks.render('./components/gov-radios/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
         legend: 'Select a radio button',
         radioButtons: radioButton,
         id: 'my-id',
         name: 'selection'
       });
+
       const $ = cheerio.load(output);
-
-      const firstDivContainer = $('div.multiple-choice');
-      expect(firstDivContainer.get(0).attribs['data-target']).toBe('data-target');
-      expect(firstDivContainer.get(0).attribs['data-journey-click']).toBe('data-target-click');
-
       const firstLabel = $('label');
       const labelCheck = expect.stringContaining('label-id');
       expect(firstLabel.text()).toEqual(labelCheck);
+      expect(firstLabel.get(0).attribs['data-target']).toBe('data-target');
+
       const firstRadio = $('input').get(0).attribs;
       expect(firstRadio.id).toBe('my-id-id');
       expect(firstRadio.name).toBe('selection');
       expect(firstRadio.value).toBe('value-id');
+      expect(firstRadio['data-journey-click']).toBe('data-target-click');
       expect(output).toMatchSnapshot();
     });
   });
   describe('class options', () => {
     it('should add classes to legend span', () => {
       const classes = {legend: 'test-legend-class'};
-      const output = nunjucks.render('./components/gov-radios/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
         legend: 'Select a radio button',
         radioButtons: yesNoRadios,
         name: 'selection',
@@ -149,7 +148,7 @@ describe('gov-radios', () => {
     });
     it('should add inline class to form to fieldset when two radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
-      const output = nunjucks.render('./components/gov-radios/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
         legend: 'Select a radio button',
         radioButtons: yesNoRadios,
         name: 'selection',
@@ -164,7 +163,7 @@ describe('gov-radios', () => {
     });
     it('should have no classes on fieldset when two or more radio buttons are supplied', () => {
       const classes = {legend: 'test-legend-class'};
-      const output = nunjucks.render('./components/gov-radios/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-radios/template.njk', {
         legend: 'Select a radio button',
         radioButtons: yesNoMaybeRadios,
         name: 'selection',

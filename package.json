@@ -23,7 +23,9 @@
   "homepage": "https://github.com/htmlandbacon/govuk-elements-nunjucks#readme",
   "jest": {
     "testEnvironment": "node",
-    "snapshotSerializers": ["jest-serializer-html-string"]
+    "snapshotSerializers": [
+      "jest-serializer-html-string"
+    ]
   },
   "xo": {
     "esnext": true,

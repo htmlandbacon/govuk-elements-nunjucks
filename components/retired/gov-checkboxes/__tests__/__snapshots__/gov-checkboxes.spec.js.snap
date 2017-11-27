@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gov-checkBoxes checkbox options should add data fields when supplied 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a check box</span>
+    </legend>
+    <label class="block-label" for="my-id-one" data-target="data-target">
+      <input id="my-id-one" type="checkbox" name="selection" value="one" data-journey-click="data-target-click">One</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes class options should add classes to legend span 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label test-legend-class">Select a check box</span>
+    </legend>
+    <label class="block-label" for="my-id-one">
+      <input id="my-id-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="my-id-two">
+      <input id="my-id-two" type="checkbox" name="selection" value="two">Two</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes should add a form hint using the hint attribute 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a checkbox</span>
+      <span class="form-hint">select as many or as few as you like</span>
+    </legend>
+    <label class="block-label" for="my-id-one">
+      <input id="my-id-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="my-id-two">
+      <input id="my-id-two" type="checkbox" name="selection" value="two">Two</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes should add error message and classes when passed an error object 1`] = `
+<div class="form-group error" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a checkbox</span>
+      <span class="error-message">Select an checkbox</span>
+    </legend>
+    <label class="block-label" for="my-id-one">
+      <input id="my-id-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="my-id-two">
+      <input id="my-id-two" type="checkbox" name="selection" value="two">Two</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes should set the ID as input-{name} if ID attr not supplied and generate checkboxes 1`] = `
+<div class="form-group" id="input-selection-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a checkbox</span>
+    </legend>
+    <label class="block-label" for="input-selection-one">
+      <input id="input-selection-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="input-selection-two">
+      <input id="input-selection-two" type="checkbox" name="selection" value="two">Two</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes should set the check box to selected if value is set 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a checkbox</span>
+    </legend>
+    <label class="block-label" for="my-id-one">
+      <input id="my-id-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="my-id-two">
+      <input id="my-id-two" type="checkbox" name="selection" value="two" checked>Two</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-checkBoxes should use ID attribute value over generated input-{name} ID and generate check boxes 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label">Select a checkbox</span>
+    </legend>
+    <label class="block-label" for="my-id-one">
+      <input id="my-id-one" type="checkbox" name="selection" value="one">One</label>
+    <label class="block-label" for="my-id-two">
+      <input id="my-id-two" type="checkbox" name="selection" value="two">Two</label>
+  </fieldset>
+</div>
+`;

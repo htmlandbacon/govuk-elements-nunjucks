@@ -8,7 +8,7 @@ const checkBoxesTwo = [{id: 'one', label: 'One', value: 'one'}, {id: 'two', labe
 describe('gov-checkBoxes', () => {
   it('should set the ID as input-{name} if ID attr not supplied and generate checkboxes', () => {
     const name = 'selection';
-    const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
       legend: 'Select a checkbox',
       checkBoxes: checkBoxesTwo,
       name
@@ -24,7 +24,7 @@ describe('gov-checkBoxes', () => {
   it('should use ID attribute value over generated input-{name} ID and generate check boxes', () => {
     const id = 'my-id';
     const name = 'selection';
-    const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
       legend: 'Select a checkbox',
       checkBoxes: checkBoxesTwo,
       name,
@@ -40,7 +40,7 @@ describe('gov-checkBoxes', () => {
 
   it('should add a form hint using the hint attribute', () => {
     const hint = 'select as many or as few as you like';
-    const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
       legend: 'Select a checkbox',
       checkBoxes: checkBoxesTwo,
       name: 'selection',
@@ -60,7 +60,7 @@ describe('gov-checkBoxes', () => {
 
   it('should set the check box to selected if value is set', () => {
     const checkBoxesTwoOneSelected = [{id: 'one', label: 'One', value: 'one'}, {id: 'two', label: 'Two', value: 'two', checked: 'true'}];
-    const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
       legend: 'Select a checkbox',
       checkBoxes: checkBoxesTwoOneSelected,
       name: 'selection',
@@ -80,7 +80,7 @@ describe('gov-checkBoxes', () => {
 
   it('should add error message and classes when passed an error object', () => {
     const error = 'Select an checkbox';
-    const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+    const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
       legend: 'Select a checkbox',
       checkBoxes: checkBoxesTwo,
       name: 'selection',
@@ -105,7 +105,7 @@ describe('gov-checkBoxes', () => {
     it('should add data fields when supplied', () => {
       const checkBoxWithData = [{id: 'one', label: 'One', value: 'one', dataTarget: 'data-target', dataJourneyClick: 'data-target-click'}];
 
-      const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
         legend: 'Select a check box',
         checkBoxes: checkBoxWithData,
         id: 'my-id',
@@ -113,25 +113,23 @@ describe('gov-checkBoxes', () => {
       });
 
       const $ = cheerio.load(output);
-
-      const firstDivContainer = $('div.multiple-choice');
-      expect(firstDivContainer.get(0).attribs['data-target']).toBe('data-target');
-      expect(firstDivContainer.get(0).attribs['data-journey-click']).toBe('data-target-click');
-
       const firstLabel = $('label');
       const oneCheck = expect.stringContaining('One');
       expect(firstLabel.text()).toEqual(oneCheck);
+      expect(firstLabel.get(0).attribs['data-target']).toBe('data-target');
+
       const firstRadio = $('input').get(0).attribs;
       expect(firstRadio.id).toBe('my-id-one');
       expect(firstRadio.name).toBe('selection');
       expect(firstRadio.value).toBe('one');
+      expect(firstRadio['data-journey-click']).toBe('data-target-click');
       expect(output).toMatchSnapshot();
     });
   });
   describe('class options', () => {
     it('should add classes to legend span', () => {
       const classes = {legend: 'test-legend-class'};
-      const output = nunjucks.render('./components/gov-checkboxes/template.njk', {
+      const output = nunjucks.render('./components/retired/gov-checkboxes/template.njk', {
         legend: 'Select a check box',
         checkBoxes: checkBoxesTwo,
         name: 'selection',

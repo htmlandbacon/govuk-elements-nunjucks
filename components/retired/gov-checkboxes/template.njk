@@ -11,10 +11,12 @@
         </legend>
         
         {% for checkBox in checkBoxes %}
-            <div class="multiple-choice"{% if checkBox.dataTarget %} data-target="{{checkBox.dataTarget}}"{% endif %}{% if checkBox.dataJourneyClick %} data-journey-click="{{checkBox.dataJourneyClick}}"{% endif %}>
-                <input id="{{id}}-{{checkBox.id}}" type="checkbox" name="{{name}}" value="{{checkBox.value}}"{% if checkBox.checked %} checked{% endif %} />
-                <label for="{{id}}-{{checkBox.id}}">{{checkBox.label}}</label>
-            </div>
+            <label class="block-label" for="{{id}}-{{checkBox.id}}"
+            {% if checkBox.dataTarget %} data-target="{{checkBox.dataTarget}}"{% endif %}>
+                <input id="{{id}}-{{checkBox.id}}" type="checkbox" name="{{name}}" value="{{checkBox.value}}" {% if checkBox.checked %} checked{% endif %}
+                {% if checkBox.dataJourneyClick %} data-journey-click="{{checkBox.dataJourneyClick}}"{% endif %}>
+                {{checkBox.label}}
+            </label>
         {% endfor %}
     </fieldset>
 </div>

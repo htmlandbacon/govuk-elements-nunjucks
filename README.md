@@ -6,7 +6,7 @@ This includes a selection form macros from [GOV.UK elements](http://govuk-elemen
 
 This is a mirror of [govuk-elelemt-marko](https://github.com/gunjam/govuk-elements-marko) in nunjucks.
 
-This currently is to work with old style radio buttons and checkboxes. (GOV.UK elements v2.1.2 or  GOV.UK Frontend Toolkit pre 4.17.0)
+Old style radio and checkboxes can be found under **retired** these can be used with GOV.UK elements v2.1.2 or  GOV.UK Frontend Toolkit pre 4.17.0.
 
 ## Tests
 
@@ -29,7 +29,6 @@ Current components:
 Things to add/improve
 
 - common approach to data-attributes
-- update radios to be new style
 
 ## Examples
 
@@ -63,6 +62,10 @@ This will need to be exposed in the nunjuck render and can be called like this:
 - [gov-select](./components/gov-select/README.md)
 - [gov-textarea](./components/gov-textarea/README.md)
 
+## UI Graveyard
+
+- [gov-checkboxes](./components/retired/gov-checkboxes/README.md)
+- [gov-radios](./components/retired/gov-radios/README.md)
 
 ## Contributing
 
