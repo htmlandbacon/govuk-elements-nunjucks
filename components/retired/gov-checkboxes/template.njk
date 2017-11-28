@@ -1,0 +1,22 @@
+{% if not id %}
+    {% set id="input-" + name %}
+{% endif %}
+
+<div class="form-group{% if error %} error{% endif %}" id="{{id}}-form">
+    <fieldset>
+       <legend>
+            <span class="form-label{% if classes.legend %} {{ classes.legend }}{% endif %}">{{legend}}</span>
+            {% if error %}<span class="error-message">{{error}}</span> {% endif %}
+            {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}
+        </legend>
+        
+        {% for checkBox in checkBoxes %}
+            <label class="block-label" for="{{id}}-{{checkBox.id}}"
+            {% if checkBox.dataTarget %} data-target="{{checkBox.dataTarget}}"{% endif %}>
+                <input id="{{id}}-{{checkBox.id}}" type="checkbox" name="{{name}}" value="{{checkBox.value}}" {% if checkBox.checked %} checked{% endif %}
+                {% if checkBox.dataJourneyClick %} data-journey-click="{{checkBox.dataJourneyClick}}"{% endif %}>
+                {{checkBox.label}}
+            </label>
+        {% endfor %}
+    </fieldset>
+</div>

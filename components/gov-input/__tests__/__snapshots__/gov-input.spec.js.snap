@@ -32,7 +32,7 @@ exports[`gov-input should add a form hint using the hint attribute 1`] = `
 `;
 
 exports[`gov-input should add error message and classes when passed an error object 1`] = `
-<div id="input-full-name-form" class="form-group error">
+<div id="input-full-name-form" class="form-group form-group-error">
   <label for="input-full-name">
     <span class="form-label-bold">Full name</span>
     <span class="error-message">Name is wrong</span>

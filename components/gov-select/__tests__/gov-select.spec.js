@@ -93,7 +93,7 @@ describe('gov-select', () => {
     const formGroupClasses = $('.form-group').attr('class');
     const errorMsg = $('label span.error-message').text();
 
-    expect(formGroupClasses).toBe('form-group error');
+    expect(formGroupClasses).toBe('form-group form-group-error');
     expect(errorMsg).toBe(error);
     expect(output).toMatchSnapshot();
   });

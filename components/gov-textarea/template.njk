@@ -5,7 +5,7 @@
     {% set rows=8 %}
 {% endif %}
 
-<div id="{{id}}-form" class="form-group{% if error %} error{% endif %}">
+<div id="{{id}}-form" class="form-group{% if error %} form-group-error{% endif %}">
     <label for="{{ id }}">
         <span class="{% if classes.label %}{{ classes.label }}{% else %}form-label-bold{% endif %}">{{ label }}</span>
         {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}

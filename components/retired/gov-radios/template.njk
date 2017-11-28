@@ -1,0 +1,22 @@
+{% if not id %}
+    {% set id="input-" + name %}
+{% endif %}
+
+<div class="form-group{% if error %} error{% endif %}" id="{{id}}-form">
+    <fieldset{% if radioButtons.length < 3 %} class="inline"{% endif %}>
+       <legend>
+            <span class="form-label{% if classes.legend %} {{ classes.legend }}{% endif %}">{{legend}}</span>
+            {% if error %}<span class="error-message">{{error}}</span> {% endif %}
+            {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}
+        </legend>
+        
+        {% for radio in radioButtons %}
+            <label class="block-label" for="{{id}}-{{radio.id}}"
+            {% if radio.dataTarget %} data-target="{{radio.dataTarget}}"{% endif %}>
+                <input id="{{id}}-{{radio.id}}" type="radio" name="{{name}}" value="{{radio.value}}" {% if value == radio.value %} checked{% endif %}
+                {% if radio.dataJourneyClick %} data-journey-click="{{radio.dataJourneyClick}}"{% endif %}>
+                {{radio.label}}
+            </label>
+        {% endfor %}
+    </fieldset>
+</div>

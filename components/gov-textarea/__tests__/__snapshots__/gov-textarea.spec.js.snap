@@ -31,7 +31,7 @@ exports[`gov-textarea should add a form hint using the hint attribute 1`] = `
 `;
 
 exports[`gov-textarea should add error message and classes when passed an error object 1`] = `
-<div id="textarea-more-details-form" class="form-group error">
+<div id="textarea-more-details-form" class="form-group form-group-error">
   <label for="textarea-more-details">
     <span class="form-label-bold">More details</span>
     <span class="error-message">Put something in the box</span>

@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gov-radios class options should add classes to legend span 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label test-legend-class">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios class options should add inline class to form to fieldset when two radio buttons are supplied 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label test-legend-class">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios class options should have no classes on fieldset when two or more radio buttons are supplied 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset>
+    <legend>
+      <span class="form-label test-legend-class">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+    <label class="block-label" for="my-id-maybe">
+      <input id="my-id-maybe" type="radio" name="selection" value="maybe">Maybe</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios radio button options should add data fields when supplied 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-id" data-target="data-target">
+      <input id="my-id-id" type="radio" name="selection" value="value-id" data-journey-click="data-target-click">label-id</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios should add a form hint using the hint attribute 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+      <span class="form-hint">Select one of the below</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios should add error message and classes when passed an error object 1`] = `
+<div class="form-group error" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+      <span class="error-message">Select an option</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios should set the ID as input-{name} if ID attr not supplied and generate radio buttons 1`] = `
+<div class="form-group" id="input-selection-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="input-selection-yes">
+      <input id="input-selection-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="input-selection-no">
+      <input id="input-selection-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios should set the radio button to checked if the value matches 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no" checked>No</label>
+  </fieldset>
+</div>
+`;
+
+exports[`gov-radios should use ID attribute value over generated input-{name} ID and generate radio buttons 1`] = `
+<div class="form-group" id="my-id-form">
+  <fieldset class="inline">
+    <legend>
+      <span class="form-label">Select a radio button</span>
+    </legend>
+    <label class="block-label" for="my-id-yes">
+      <input id="my-id-yes" type="radio" name="selection" value="yes">Yes</label>
+    <label class="block-label" for="my-id-no">
+      <input id="my-id-no" type="radio" name="selection" value="no">No</label>
+  </fieldset>
+</div>
+`;
