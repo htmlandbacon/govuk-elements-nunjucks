@@ -97,7 +97,7 @@ describe('gov-checkBoxes', () => {
     const formGroupClasses = $('.form-group').attr('class');
     const errorMsg = $('legend span.error-message').text();
 
-    expect(formGroupClasses).toBe('form-group error');
+    expect(formGroupClasses).toBe('form-group form-group-error');
     expect(errorMsg).toBe(error);
     expect(output).toMatchSnapshot();
   });

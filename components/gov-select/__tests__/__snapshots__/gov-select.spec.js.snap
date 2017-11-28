@@ -68,7 +68,7 @@ exports[`gov-select should add a form hint using the hint attribute 1`] = `
 `;
 
 exports[`gov-select should add error message and classes when passed an error object 1`] = `
-<div id="my-id-form" class="form-group error">
+<div id="my-id-form" class="form-group form-group-error">
   <label for="my-id">
     <span class="form-label-bold">select an option</span>
     <span class="error-message">Select an option</span>

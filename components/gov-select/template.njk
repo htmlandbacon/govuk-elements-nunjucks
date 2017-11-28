@@ -2,7 +2,7 @@
     {% set id="select-" + name %}
 {% endif %}
 
-<div id="{{id}}-form" class="form-group{% if classes.fromGroup %} {{classes.fromGroup}}{% endif %}{% if error %} error{% endif %}">
+<div id="{{id}}-form" class="form-group{% if classes.fromGroup %} {{classes.fromGroup}}{% endif %}{% if error %} form-group-error{% endif %}">
     <label for="{{ id }}">
         <span class="{% if classes.label %}{{ classes.label }}{% else %}form-label-bold{% endif %}">{{ label }}</span>
         {% if hint %}<span class="form-hint">{{hint}}</span>{% endif %}

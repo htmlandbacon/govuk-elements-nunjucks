@@ -92,7 +92,7 @@ exports[`gov-radios should add a form hint using the hint attribute 1`] = `
 `;
 
 exports[`gov-radios should add error message and classes when passed an error object 1`] = `
-<div class="form-group error" id="my-id-form">
+<div class="form-group form-group-error" id="my-id-form">
   <fieldset class="inline">
     <legend>
       <span class="form-label">Select a radio button</span>

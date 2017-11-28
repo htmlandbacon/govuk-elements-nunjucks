@@ -2,7 +2,7 @@
     {% set id="input-" + name %}
 {% endif %}
 
-<div class="form-group{% if error %} error{% endif %}" id="{{id}}-form">
+<div class="form-group{% if error %} form-group-error{% endif %}" id="{{id}}-form">
     <fieldset{% if radioButtons.length < 3 %} class="inline"{% endif %}>
        <legend>
             <span class="form-label{% if classes.legend %} {{ classes.legend }}{% endif %}">{{legend}}</span>

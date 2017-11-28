@@ -52,7 +52,7 @@ exports[`gov-checkBoxes should add a form hint using the hint attribute 1`] = `
 `;
 
 exports[`gov-checkBoxes should add error message and classes when passed an error object 1`] = `
-<div class="form-group error" id="my-id-form">
+<div class="form-group form-group-error" id="my-id-form">
   <fieldset>
     <legend>
       <span class="form-label">Select a checkbox</span>
