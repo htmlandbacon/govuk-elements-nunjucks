@@ -1,6 +1,6 @@
 # govuk-elements-nunjucks
 
-## 🚨 Depreciation notice 🚨
+## 🚨 Deprecation notice 🚨
 
 The GOV.UK [design system](https://design-system.service.gov.uk/) now has nunjucks macros - you can find out more on [github](https://github.com/alphagov/govuk-design-system).
 
