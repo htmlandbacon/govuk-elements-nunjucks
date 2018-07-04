@@ -1,6 +1,12 @@
 # govuk-elements-nunjucks
 
-GOVUK elements, nunjucks style.
+## 🚨 Depreciation notice 🚨
+
+The GOV.UK [design system](https://design-system.service.gov.uk/) now has nunjucks macros - you can find out more on [github](https://github.com/alphagov/govuk-design-system).
+
+You should look to move to this instead.
+
+## GOVUK elements, nunjucks style.
 
 This includes a selection form macros from [GOV.UK elements](http://govuk-elements.herokuapp.com/), these are using [nunjucks](https://mozilla.github.io/nunjucks/) and provide a component that can be configured, this encapsulates - text, data, error state, classes and values.
 
